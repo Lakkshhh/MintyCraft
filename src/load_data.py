@@ -15,7 +15,6 @@ def clean_data(df):
     print("✅ Data cleaned. Shape:", df_cleaned.shape)
     return df_cleaned
 
-# Test code (you can remove this part before pushing)
 if __name__ == "__main__":
     data = load_data("data/50_Startups.csv")
     if data is not None:
