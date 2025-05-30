@@ -5,10 +5,6 @@ __pycache__/
 # Virtual environment
 venv/
 
-# Output and logs
-outputs/
-*.log
-
 # IDE/editor folders
 .vscode/
 .idea/
