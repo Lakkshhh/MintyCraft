@@ -7,7 +7,7 @@ def perform_analysis(df):
     df["total_spend"] = df["r&d_spend"] + df["administration"] + df["marketing_spend"]
     df["roi"] = df["profit"] / df["total_spend"]
 
-    os.makedirs("outputs", exist_ok=True)
+    os.makedirs("../outputs", exist_ok=True)
 
     corr = df.corr(numeric_only=True)
     plt.figure(figsize=(10, 8))

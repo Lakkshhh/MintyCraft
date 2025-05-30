@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 def generate_additional_insights(df):
-    os.makedirs("outputs", exist_ok=True)
+    os.makedirs("../outputs", exist_ok=True)
 
     # Calculate ROI and Total Spend if not present
     if "roi" not in df.columns:
@@ -20,7 +20,7 @@ def generate_additional_insights(df):
     for i, val in enumerate(avg_roi):
         bars.annotate(f"{val:.2f}", (i, val), textcoords="offset points", xytext=(0, 5), ha='center', fontsize=9)
     plt.tight_layout()
-    plt.savefig("outputs/avg_roi_by_state.png")
+    plt.savefig("../outputs/avg_roi_by_state.png")
     plt.close()
 
     # 2.Profit vs R&D Spend Scatter Plot
@@ -32,7 +32,7 @@ def generate_additional_insights(df):
     plt.legend(title="State", fontsize=9)
     plt.grid(True, linestyle='--', alpha=0.5)
     plt.tight_layout()
-    plt.savefig("outputs/profit_vs_rd_spend.png")
+    plt.savefig("../outputs/profit_vs_rd_spend.png")
     plt.close()
 
     # 3. ROI vs Total Spend Scatter Plot
@@ -43,5 +43,5 @@ def generate_additional_insights(df):
     plt.ylabel("ROI")
     plt.grid(True, linestyle='--', alpha=0.5)
     plt.tight_layout()
-    plt.savefig("outputs/roi_vs_total_spend.png")
+    plt.savefig("../outputs/roi_vs_total_spend.png")
     plt.close()

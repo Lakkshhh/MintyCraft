@@ -9,7 +9,7 @@ def main():
     perform_analysis(df)
     generate_insights(df)
     generate_additional_insights(df)
-    print("All graphs and insights saved to 'outputs/' folder!")
+    print("All graphs and insights saved to outputs folder!")
 
 if __name__ == "__main__":
     main()
