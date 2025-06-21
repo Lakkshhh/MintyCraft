@@ -1,0 +1,9 @@
+GPT4All-Generated Summary: 
+
+The data is from a marketing campaign that was run in 2022, and the goal of the campaign was to increase sales for various products across different states. The ROI (return on investment) metric measures how much profit was generated per dollar spent on advertising.
+
+Based on this analysis, we can see that New York had the highest average ROI among all states at 0.511711, followed by California with an ROI of 0.408137 and Florida with an ROI of 0.296782.
+
+However, when it comes to profit generated per dollar spent on advertising (profit/total_spend), New York had the highest average at $113,756.45 followed by California ($103,905.18) and Florida ($118,774.02).
+
+In terms of total profit generated across all states during this campaign period (profit), New York had the highest with $122 million while California came in second place at around $10 million followed by Florida at approximately $9 million.
