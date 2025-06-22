@@ -1,0 +1,9 @@
+GPT4All-Generated Summary: 
+
+Total Spending Across States:
+state                  total_spend
+Florida               1014242.68
+New York             1044780.37
+California           1021850.59
+
+Overall, the data indicates that companies in New York have a higher ROI and profitability compared to those in California and Florida. However, businesses in California spend less on average than their counterparts in other states. Despite this, they still show relatively low returns on investment. In contrast, Florida-based firms exhibit lower profits but are more efficient with spending. Overall, New York appears as the most profitable state for these companies, indicating that investing in resources and infrastructure there may yield higher ROI and profitability.
