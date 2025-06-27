@@ -2,10 +2,15 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 import os
-from gpt4all import GPT4All
+from google import genai
+from google.genai import types
+from dotenv import load_dotenv
 
-model_path = "/Users/lakkshtyagi/Downloads/MintyCraft-main/models/Nous-Hermes-2-Mistral-7B-DPO.Q4_K_M.gguf"
-model = GPT4All(model_path, allow_download=False)
+load_dotenv()
+api_key = os.getenv("GEMINI_API_KEY")
+
+# Initialize Gemini client
+client = genai.Client(api_key=api_key)
 
 def generate_gpt_summary(df_stats: str) -> str:
     prompt = f"""
@@ -22,8 +27,14 @@ Focus on:
 Here is the data:
 {df_stats}
 """
-    output = model.generate(prompt=prompt, max_tokens=350, temp=0.7)
-    return output.strip()
+    response = client.models.generate_content(
+        model="gemini-2.5-flash",
+        contents=prompt,
+        config=types.GenerateContentConfig(
+            thinking_config=types.ThinkingConfig(thinking_budget=0)  # Speeds it up
+        )
+    )
+    return response.text.strip()
 
 def generate_insights(df):
     df["total_spend"] = df["r&d_spend"] + df["administration"] + df["marketing_spend"]
@@ -118,7 +129,7 @@ Average Profit by State:
     # Saving it
     summary = generate_gpt_summary(summary_str)
     with open("../outputs/data_insights_summary_gpt.txt", "w", encoding="utf-8") as f:
-        f.write("GPT4All-Generated Summary: \n\n")
+        f.write("Gemini-Generated Summary: \n\n")
         f.write(summary)
 
-    print("GPT summary has been generated!")
+    print("Gemini summary has been generated and saved to outputs!")
